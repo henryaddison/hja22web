@@ -1,0 +1,16 @@
+body {
+  background: lightblue;
+  text-align: center;
+  font-size: 36px;
+}
+
+#top-sites li {
+  display: block;
+  padding: 10px;
+}
+
+#top-sites img.bullet {
+  height: 32px;
+  width: 32px;
+  padding: 0 5px;
+}
