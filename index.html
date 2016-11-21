@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="app.js"></script>
     <title>Another glorious day on hja22 web</title>
   </head>
   <body>
     <header>
       <div id="sun"><img src="sun.png" /></div>
     </header>
+
     <div id="top-sites">
-      <ul>
-        <li><a href="https://www.bbc.co.uk/news"><img class="bullet" src="https://www.bbc.co.uk/favicon.ico"/>BBC News</a></li>
-        <li><a href="https://www.theguardian.com/uk"><img class="bullet" src="https://www.theguardian.com/favicon.ico"/>The Guardian</a></li>
-        <li><a href="https://arstechnica.co.uk"><img class="bullet" src="https://arstechnica.co.uk/favicon.ico"/>Ars Technica</a></li>
-        <li><a href="http://www.espncricinfo.com"><img class="bullet" src="http://www.espncricinfo.com/favicon.ico"/>Cricinfo</a></li>
-        <li><a href="https://news.ycombinator.com/news"><img class="bullet" src="https://news.ycombinator.com/favicon.ico"/>Hacker News</a></li>
-        <li><a href="http://www.datatau.com/news"><img class="bullet" src="http://www.datatau.com/favicon.ico"/>Data Tau</a></li>
-        <li><a href="https://feedly.com/index.html"><img class="bullet" src="https://feedly.com/favicon.ico"/>Feedly</a></li>
-      </ul>
+
     </div>
+
+    <script id="linksTemplate" type="text/x-handlebars-template">
+      <ul>
+        {{#each links}}
+          <li>{{> link}}</li>
+        {{/each}}
+      </ul>
+    </script>
+
+    <script id="linkPartial" type="text/x-handlebars-template">
+      <a href="{{href}}"><img class="bullet" src="{{favicon_url}}"/>{{text}}</a>
+    </script>
 
   </body>
 </html>
