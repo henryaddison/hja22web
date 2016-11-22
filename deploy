@@ -1,6 +1,0 @@
-#!/bin/sh -e
-
-for file in index.html app.js style.css sun.png
-do
-  aws s3 cp $file s3://web.hja22.co.uk/
-done

@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+for file in $( ls target )
+do
+  aws s3 cp target/$file s3://web.hja22.co.uk/
+done
