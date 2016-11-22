@@ -32,7 +32,8 @@ $(document).ready(function() {
     }
   ]
 
-  var topsitesHtml = Handlebars.templates.topsites({links: links});
-
-  $("#top-sites").html(topsitesHtml);
+  Handlebars.registerPartial("link", $("#linkPartial").html());
+  var template = Handlebars.compile($("#linksTemplate").html());
+  var results = template({links: links});
+  $("#top-sites").html(results);
 });
